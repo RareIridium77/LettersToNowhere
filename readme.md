@@ -5,7 +5,6 @@ This project is WIP
 ```
 
 ### REVIEW
-- PlayerController
 - SceneInstaller
 
 ### TODO
