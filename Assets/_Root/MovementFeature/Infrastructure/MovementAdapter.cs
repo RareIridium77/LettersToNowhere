@@ -14,7 +14,6 @@ namespace _Root.MovementFeature.Infrastructure
         [SerializeField] private Rigidbody2D _rigidbody;
 
         private MovementState _movementState;
-        private MovementModel _movementModel;
         private MovementSystem _movementSystem;
 
         [Inject]
@@ -22,12 +21,19 @@ namespace _Root.MovementFeature.Infrastructure
         {
             _movementState = movementState;
             _movementSystem = movementSystem;
+        }
+
+        private void Start()
+        {
+            // NOTE: Инициализировать компоненты юнити тут, или хде?
 
             InitializeRigidbody();
         }
 
         private void InitializeRigidbody()
         {
+            _rigidbody = GetComponent<Rigidbody2D>();
+
             // REVIEW
             _rigidbody.gravityScale = 0f; // zero gravity
             _rigidbody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;

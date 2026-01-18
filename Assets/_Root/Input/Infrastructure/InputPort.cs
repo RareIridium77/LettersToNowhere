@@ -59,6 +59,5 @@ namespace _Root.Input.Infrastructure
             OnInteractionPressed?.Invoke();
             Debug.Log("Interaction performed");
         }
-
     }
 }

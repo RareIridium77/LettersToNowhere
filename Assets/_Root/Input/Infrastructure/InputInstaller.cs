@@ -1,4 +1,5 @@
 using _Root.Shared.Ports.Input;
+
 using Zenject;
 
 namespace _Root.Input.Infrastructure
