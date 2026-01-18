@@ -6,6 +6,7 @@ using Zenject;
 
 namespace _Root.MovementFeature.Infrastructure
 {
+    [RequireComponent(typeof(MovementAdapter))]
     public class MovementInstaller : MonoInstaller
     {
         [SerializeField] private MovementAdapter _movementAdapter;

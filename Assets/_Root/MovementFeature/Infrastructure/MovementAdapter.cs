@@ -23,16 +23,10 @@ namespace _Root.MovementFeature.Infrastructure
             _movementSystem = movementSystem;
         }
 
-        private void Start()
+#if UNITY_EDITOR
+        private void OnValidate()
         {
-            // NOTE: Инициализировать компоненты юнити тут, или хде?
-
-            InitializeRigidbody();
-        }
-
-        private void InitializeRigidbody()
-        {
-            _rigidbody = GetComponent<Rigidbody2D>();
+            _rigidbody ??= GetComponent<Rigidbody2D>();
 
             // REVIEW
             _rigidbody.gravityScale = 0f; // zero gravity
@@ -41,6 +35,7 @@ namespace _Root.MovementFeature.Infrastructure
             _rigidbody.interpolation = RigidbodyInterpolation2D.Extrapolate;
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+#endif
 
         #region Handling
 
